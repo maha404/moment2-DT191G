@@ -1,0 +1,22 @@
+@model IEnumerable<moment2.Model.Todo>
+@{
+  ViewData["Title"] = "Att göra";
+}
+
+<h2>Todo</h2>
+
+<form action="todo" method="post">
+  <label for="Task">Att göra</label><br>
+  <input type="text" id="Task" name="Task"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<ul>
+    @foreach (var todo in Model) 
+    {
+        <li>@todo.Task</li>
+    }
+</ul>
+
+@* @Html.Partial("_List"); *@
+<partial name="_Footer">
