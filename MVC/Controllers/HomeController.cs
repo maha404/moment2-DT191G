@@ -1,31 +1,24 @@
-﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using MVC.Models;
 
-namespace MVC.Controllers;
+namespace moment2.controller;
 
-public class HomeController : Controller
+public class HomeController : Controller 
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult OnGetPartial() 
     {
-        return View();
+        return PartialView("_Footer");
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [Route("/data")]
+    public IActionResult Data()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        ViewBag.data = "Lite text skriven med ViewBag";
+        ViewData["data"] = "Lite text skriven med ViewData";
+        return View();
     }
 }
