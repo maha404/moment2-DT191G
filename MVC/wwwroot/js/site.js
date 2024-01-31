@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+let menuIcon = document.getElementById("mobile-menu");
 
-// Write your JavaScript code.
+windowWidth = window.innerWidth;
+
+menuIcon.addEventListener("click", function () {
+    let menu = document.getElementById("menu");
+    if(menu.style.display != "block") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+})
