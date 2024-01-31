@@ -18,19 +18,22 @@ public class TodoController : Controller
     [HttpPost]
     public IActionResult Todo(Todo ts)
     {
-        string path = "todos.json";
-        // Läs befintig JSON-fil
-        var existingJsonString = System.IO.File.ReadAllText(path);
-        var newTodo = JsonConvert.DeserializeObject<List<Todo>>(existingJsonString);
+        if(ModelState.IsValid) {
+            string path = "todos.json";
+            // Läs befintig JSON-fil
+            var existingJsonString = System.IO.File.ReadAllText(path);
+            var newTodo = JsonConvert.DeserializeObject<List<Todo>>(existingJsonString);
 
-        // Lägg till det nya Todo-objektet
-        newTodo.Add(ts);
+            // Lägg till det nya Todo-objektet
+            newTodo.Add(ts);
 
-        // Konvertera till JSON och skriv tillbaka till filen
-        var updatedJsonString = JsonConvert.SerializeObject(newTodo, Formatting.Indented);
-        System.IO.File.WriteAllText(path, updatedJsonString);
+            // Konvertera till JSON och skriv tillbaka till filen
+            var updatedJsonString = JsonConvert.SerializeObject(newTodo, Formatting.Indented);
+            System.IO.File.WriteAllText(path, updatedJsonString);
 
-        Todo(); // Uppdaterar listan
+            Todo(); // Uppdaterar listan
+        }
+        
         return View();
     }
 
