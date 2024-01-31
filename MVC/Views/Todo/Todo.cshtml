@@ -3,20 +3,22 @@
   ViewData["Title"] = "Att göra";
 }
 
-<h2>Todo</h2>
+<h2>Att göra</h2>
+
+
+<partial name="_ErrorList">
 
 <form action="todo" method="post">
-  <label for="Task">Att göra</label><br>
-  <input type="text" id="Task" name="Task"><br>
-  <input type="submit" value="Submit">
+  <input type="text" id="Task" name="Task">
+  <br>
+  <input type="submit" value="Lägg till">
 </form> 
 
-<ul>
+@if(Model != null) {
+  <ul>
     @foreach (var todo in Model) 
     {
         <li>@todo.Task</li>
     }
-</ul>
-
-@* @Html.Partial("_List"); *@
-<partial name="_Footer">
+  </ul>
+}

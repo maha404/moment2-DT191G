@@ -1,11 +1,44 @@
-
+@model moment2.Model.Data;
 @{
-    ViewData["Title"] = "Data";
+    ViewData["Title"] = "Mitt husdjur";
 }
 
-<h2>Data</h2>
+<div>
+<h2>Mitt husdjur!</h2>
 
-<p>Viewbag <br> @ViewBag.data </p>
-<p>ViewData <br> @ViewData["data"]</p>
+<partial name="_ErrorList">
 
-<partial name="_Footer">
+<form asp-controller="Home" asp-action="Data" method="post">
+        <label for="name">Namn</label>
+    <br>
+        <input type="text" id="name" name="Name">
+    <br>
+    <br>
+        <label for="radio1">Katt</label>
+        <input type="radio" name="Radios" id="radio1" value="katt">
+        <label for="radio2">Hund</label>
+        <input type="radio" name="Radios" id="radio2" value="hund">
+        <label for="radio3">Marsvin</label>
+        <input type="radio" name="Radios" id="radio3" value="marsvin">
+    <br>
+    <br>
+        <label for="dropdown">Dropdown</label>
+    <br>
+        <select name="Dropdown" id="dropdown">
+            <option value="klätra">Klätra</option>
+            <option value="springa">Springa</option>
+            <option value="äta">Äta</option>
+        </select>
+    <br>
+    <textarea name="Message" id="message" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="Skicka">
+</form>
+
+@if(ViewData["answer"] != null && ViewBag.message != null) {
+    <p>@ViewData["answer"]</p>
+    <p>@ViewBag.message</p>
+}
+
+
+</div>
