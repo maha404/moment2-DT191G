@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(40, 42, 42);
+    padding: 1rem;
+}
+
+.logo {
+    color: white;
+    font-size: medium;
+    margin: 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 0;
+}
+
+ul li {
+    display: none;
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: solid black 1px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Surfplatta */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: aqua;
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    body {
+        background-color: blueviolet;
+    }
+
+    a:link, 
+    a:visited {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: rgb(193, 193, 193);
+    }
+}
+
+/* Större skärmar */
+@media screen and (min-width: 1440px) {
+    body {
+        background-color: chocolate;
+    }
+}
