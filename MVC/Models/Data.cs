@@ -4,6 +4,7 @@ namespace moment2.Model;
 
 public class Data
 {
+    // Data annotation + errormeddelande
     [Required(ErrorMessage = "Namn är obligatoriskt!")]
     public string? Name { get; set; }
 
@@ -16,8 +17,10 @@ public class Data
     [Required(ErrorMessage = "Meddelande är obligatorisk!")]
     public string? Message { get; set; }
 
+    // Konstruktor
     public Data() {}
 
+    // Konstruktor med parametrar
     public Data(string name, string radios, string dropdown, string message)
     {
         this.Name = name;

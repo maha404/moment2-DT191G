@@ -3,9 +3,10 @@
     ViewData["Title"] = "Mitt husdjur";
 }
 
-<div>
+<section>
 <h2>Mitt husdjur!</h2>
 
+@* Inkludering av partial *@
 <partial name="_ErrorList">
 
 <form asp-controller="Home" asp-action="Data" method="post">
@@ -22,7 +23,7 @@
         <input type="radio" name="Radios" id="radio3" value="marsvin">
     <br>
     <br>
-        <label for="dropdown">Dropdown</label>
+        <label for="dropdown">Aktivitet</label>
     <br>
         <select name="Dropdown" id="dropdown">
             <option value="klätra">Klätra</option>
@@ -30,15 +31,16 @@
             <option value="äta">Äta</option>
         </select>
     <br>
+    <br>
     <textarea name="Message" id="message" cols="30" rows="10"></textarea>
     <br>
     <input type="submit" value="Skicka">
 </form>
 
+@* Utskrift av datan från formuläret *@
 @if(ViewData["answer"] != null && ViewBag.message != null) {
     <p>@ViewData["answer"]</p>
     <p>@ViewBag.message</p>
 }
 
-
-</div>
+</section>

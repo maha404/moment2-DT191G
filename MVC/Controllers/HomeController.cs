@@ -11,21 +11,20 @@ public class HomeController : Controller
         return View();
     }
 
+    // Hämtar in partial
     public IActionResult OnGetPartial() 
     {
         return PartialView("_Footer");
     }
 
-    [Route("/data")]
+    [Route("/data")] // Ändring av grundroutingen
     public IActionResult Data()
     {
-        ViewBag.data = "Lite text skriven med ViewBag";
-        ViewData["data"] = "Lite text skriven med ViewData";
         return View();
     }
 
-    [Route("/data")]
-    [HttpPost]
+    [Route("/data")] // Ändring av grundroutingen
+    [HttpPost] // Post metod för att hämta in data
     public IActionResult Data(Data input)
     {
         if(ModelState.IsValid) {
