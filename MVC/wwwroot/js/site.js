@@ -1,8 +1,6 @@
 ﻿
 let menuIcon = document.getElementById("mobile-menu");
 
-windowWidth = window.innerWidth;
-
 menuIcon.addEventListener("click", function () {
     let menu = document.getElementById("menu");
     if(menu.style.display != "block") {
