@@ -68,12 +68,19 @@ footer {
     padding: 3% 0 3% 0;
 }
 
+/* Felmeddelande ruta */
+.validation-summary-errors {
+    color: #f44336;
+    font-weight: bold;
+}
+   
+.validation-summary-errors ul {
+    list-style: none;
+}
+
+/* Media quires --------------------------------------------------------> */
 /* Surfplatta */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    body {
-        background-color: aqua;
-    }
-
     .nav-list li {
         width: 50%;
     }
@@ -82,10 +89,6 @@ footer {
 
 /* Laptop */
 @media screen and (min-width: 1023px) and (max-width: 1440px) {
-    body {
-        background-color: blueviolet;
-    }
-
     main {
         margin: 0 auto;
         margin-top: 5%;
@@ -95,10 +98,6 @@ footer {
 
 /* Större skärmar */
 @media screen and (min-width: 1440px) {
-    body {
-        background-color: chocolate;
-    }
-
     main {
         margin: 0 auto;
         max-width: 40%;
@@ -106,6 +105,10 @@ footer {
 
     .nav-list li {
         width: 50%;
+    }
+
+    footer {
+        padding: 1% 0 1% 0;
     }
 
 }
