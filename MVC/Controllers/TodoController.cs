@@ -37,9 +37,4 @@ public class TodoController : Controller
         return View();
     }
 
-    // Hämtar in partial
-    public IActionResult OnGetPartial() 
-    {
-        return PartialView("_Footer");
-    }
 }

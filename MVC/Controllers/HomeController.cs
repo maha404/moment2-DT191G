@@ -11,12 +11,6 @@ public class HomeController : Controller
         return View();
     }
 
-    // Hämtar in partial
-    public IActionResult OnGetPartial() 
-    {
-        return PartialView("_Footer");
-    }
-
     [Route("/data")] // Ändring av grundroutingen
     public IActionResult Data()
     {
